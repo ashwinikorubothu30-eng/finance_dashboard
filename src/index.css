@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-base);
+  --color-card: var(--bg-card);
+  --color-foreground: var(--text-main);
+  --color-muted: var(--text-muted);
+  --color-border-color: var(--border-subtle);
+  
+  /* Primary Purple/Blue Gradient Accents */
+  --color-accent: #8b5cf6; /* Purple 500 */
+  --color-accent-hover: #7c3aed; /* Purple 600 */
+  --color-accent-secondary: #3b82f6; /* Blue 500 */
+  
+  --color-expense: #ef4444; /* Red 500 */
+  --color-income: #10b981; /* Emerald 500 */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Adding custom soft shadow for cards */
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-soft-hover: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+  :root {
+    --bg-base: #f3f4f6; /* Light grey */
+    --bg-card: #ffffff; /* White cards */
+    --text-main: #1f2937; /* Gray 800 */
+    --text-muted: #6b7280; /* Gray 500 */
+    --border-subtle: #e5e7eb; /* Gray 200 */
+  }
+  .dark {
+    --bg-base: #111827; /* Rich dark grey */
+    --bg-card: #1f2937; /* Elevated dark card */
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --border-subtle: #374151;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom UI Utilities */
+.bg-gradient-primary {
+  background-image: linear-gradient(to right, var(--color-accent), var(--color-accent-secondary));
+}
+.text-gradient-primary {
+  background-image: linear-gradient(to right, var(--color-accent), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
