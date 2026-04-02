@@ -17,5 +17,5 @@ A responsive and interactive Finance Dashboard built using React.
 - Recharts
 
 ## ▶️ How to Run
-npm install
+npm install  
 npm run dev
